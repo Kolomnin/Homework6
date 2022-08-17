@@ -1,8 +1,5 @@
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Random;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -12,10 +9,8 @@ public class Main {
         task4();
     }
 
-    int[] arr = generateRandomArray();
-
     public static int[] generateRandomArray() {
-        java.util.Random random = new java.util.Random();
+        Random random = new Random();
         int[] arr = new int[30];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100_000) + 100_000;
@@ -38,10 +33,17 @@ public class Main {
         System.out.println("Задание №2");
         int[] arr = generateRandomArray();
         int min = arr[0];
-        for (int j : arr) {
-            min = Math.min(min, j);
+        for (int i : arr) {
+            min = Math.min(min, i);
         }
         System.out.println("Минимальная сумма трат за день составила " + min + " рублей");
+        System.out.println();
+
+        int max = arr[0];
+        for (int x : arr) {
+            max = Math.max(max, x);
+        }
+        System.out.println("Максимальная сумма трат за день составила " + max + " рублей");
         System.out.println();
     }
     public static void task3() {
@@ -50,8 +52,8 @@ public class Main {
         double average = 0;
         if (arr.length > 0) {
             double sum = 0;
-            for (int j = 0; j < arr.length; j++) {
-                sum += arr[j];
+            for (int i : arr) {
+                sum += i;
             }
             average = sum / arr.length;
         }
