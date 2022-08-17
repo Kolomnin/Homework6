@@ -65,6 +65,5 @@ public class Main {
         for (int i = reverseFullName.length-1; i > -1 ; i--) {
             System.out.print(reverseFullName[i]);
         }
-
     }
 }
